@@ -1,0 +1,257 @@
+Delivered-To: sraban4897@gmail.com
+Received: by 2002:a05:6520:555:b0:298:c0f6:aeab with SMTP id h21csp4109631lkv;
+        Fri, 5 Jul 2024 01:05:56 -0700 (PDT)
+X-Received: by 2002:a05:6a20:8b1f:b0:1be:d062:47c4 with SMTP id adf61e73a8af0-1c0ccb0e69emr3463946637.53.1720166756415;
+        Fri, 05 Jul 2024 01:05:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1720166756; cv=none;
+        d=google.com; s=arc-20160816;
+        b=c7I1r902+KoBOaLYgHC6sVOcAkzR72ID3Wefo4/N7d+WhDocXi7Lyu3t1FAOdwhnTu
+         EJbjQF9gH3WQu9+iVxKAn9dszFus9HEUGdd4N9o0+XtmRXXPknouQCYY56m0hCMDEE4r
+         6SRfXa6gck+UvwTFyzXVt+me7LX/dCWr/XS/qXSGtuYddxvzy+mD3o47LUnsXXkp/698
+         unSNDrn/WXIDAlS05HCbRfI3ODHP7mCF7/Nmc9XDwLq2HjZFJfSexvLulKqGXSf96Pwr
+         2PKDyanz3rWbE6vOgN7fvddJ/Eqicwg73jvZFO2XzuuHOqU35Ry8w5i29MQg8/nmSigl
+         GAnQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=tpGbYhUKsfuANmEitkSeNcjawAESlkHlr9mhwIkR/es=;
+        fh=xFFNMPujod2Imka9Yx8yy/Dlk+FRKVpvokCFzF2iot4=;
+        b=nmTQ57Aj1baUI4lmE1OleP+3NQ2oRrqA9Mm+r7E1KhVlIM0ctcKZu1hkOjbYqOq/XN
+         qYPy676r8OL0uwMt8hrf9nSK/0wL9TPL8p6WUK8yHSLtDV9ivkZD1JJjsSXq+5XIlYtq
+         9cG3j7Wlejfw5n1l/VbtLqEMW8MFFRCwafvSf2cZ4c7HpP5F/48GYMbYwijzLsVJYewb
+         JG5380iCh8LsM0OVuIPJDjTyJUykTlbA/l2FEbHGo+1P3THt+mtuKCc4l0sdFP1MKTxY
+         Ev65qap1iT1Qm5l6McVOngRdxoQVJMmiw7j/i8YWO6+Y0vzmTWUfSlgRmlWYdTvyThVb
+         iRQg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=cWNjrb7T;
+       spf=pass (google.com: domain of sraban.wissen@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=sraban.wissen@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <sraban.wissen@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 98e67ed59e1d1-2c9a2fe61ccsor1342491a91.2.2024.07.05.01.05.56
+        for <sraban4897@gmail.com>
+        (Google Transport Security);
+        Fri, 05 Jul 2024 01:05:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of sraban.wissen@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=cWNjrb7T;
+       spf=pass (google.com: domain of sraban.wissen@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=sraban.wissen@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1720166756; x=1720771556; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=tpGbYhUKsfuANmEitkSeNcjawAESlkHlr9mhwIkR/es=;
+        b=cWNjrb7T5loY4KrP1blsNh6kJSOVX3svtPYLK+SlxA40GH/gbTmXR3l0/y5GCULzlj
+         ybokH2kVO5b5dCZq+YveIUHqhMyxhtfu3NoWfUlDiqbSpNFG9RdZa3FH+o7iEXMBM7Ps
+         P1DltN3NLOIceqZ2qHt1n31N0DbMXfpjSM1Js8VBpHZJ4z3E4WEj6Griq9sUMF/R0wlV
+         dcCZWmEWffA84gYfUcb9Q9AONqoAh9RaXrRw3vhtzfhAPklJamJ9vh4JUryZadcxMLZD
+         hYkhfM9VYLYkIAyCPDVvaSiMUODwFwtTszskQIkDGgITAPn1CMmJd0MZqAhBqmlkEiyE
+         BhoQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1720166756; x=1720771556;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=tpGbYhUKsfuANmEitkSeNcjawAESlkHlr9mhwIkR/es=;
+        b=cvDyG6iRCsIoHxBYR/XnLbUWRzajACm+ZAW466NTyEJdbSYZ1EA+yS8JzvlmilLAhc
+         fbvuSC3mVbFgIDhktgm/ZcACX/WN4Sf+jdQfGHOB+25tW8xLbfDVVGt0WlWkZ/FiQInc
+         duaQfAwhf9hnCXX63613LX86lr2yHggoh+4CofPtaVgTxZtrjWAtcVE7xiWXY1t6Whk8
+         1JafhQaqEf9e6MmGuuBX+PPTW10Pb1EDiSRUSZ2fInSAWhJK/z31DyzdXThzhEK7K3zE
+         eCX3+WqEB+MSV8BSOF/AwcIGxfxfh2ASI6T4gLdrgWM9EiHTjtnvqBu9vnKKK0gB91Xh
+         YCjg==
+X-Gm-Message-State: AOJu0Yzm6ziemdIvCjOQ+iHrl+GlhtMwCFzggvgZynWtiGfl17l5aOTz
+	1iZDiQVxYxh2SL4A8Sp4HMkt5iFxpPJcZ+WguYVpJIzdMalycLAh+qPvQsXTTFgAgGfhF3vaPSS
+	dputa0rCh6BHvhP1yxAMAgmGLYGUBm1OI
+X-Google-Smtp-Source: AGHT+IFsheCOjEFn8e04PVOkVUrbU94j6Vnwu/k/kX8UdFBVQ+rsVqfQnlW42kDDPCj6Lws6FpMktAZzVY4ryZ4Y+rg=
+X-Received: by 2002:a17:90a:d24f:b0:2c8:db8b:7247 with SMTP id
+ 98e67ed59e1d1-2c99c50fc24mr2957119a91.9.1720166754586; Fri, 05 Jul 2024
+ 01:05:54 -0700 (PDT)
+MIME-Version: 1.0
+From: sraban wissen <sraban.wissen@gmail.com>
+Date: Fri, 5 Jul 2024 13:35:45 +0530
+Message-ID: <CAKhNXu_WsvrOm0DoU40p90kTV-pbu+Lb4+m2BMPAt24WvNj+CA@mail.gmail.com>
+Subject: -- NG Coding Standards/ CheckLists while writing code --
+To: sraban4897@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000005c9b11061c7b889f"
+
+--0000000000005c9b11061c7b889f
+Content-Type: text/plain; charset="UTF-8"
+
+.use of PascalCase, camelCase, kebab-case, SNAKE_CASE naming conventions
+.Keep services focused on a single responsibility.
+.Suffix names with "****.service.ts", "****.page.ts", "****.component.ts",
+"****.mock.ts", .....
+.Use project prefix for component selectors like <wissen-modal-dialog/>
+.dependency injection system to inject services where needed
+.use onPushStrategy/ use this.cdr if required
+.Use encapsulation strategies (ViewEncapsulation) wisely based on component
+requirements
+.Unsubscribe from observables to avoid memory leaks
+.Use operators like switchMap and mergeMap to avoid nested subscriptions
+.Write self-explanatory code, proper name for members/methods(verbs), use
+CONST_DATA, readonly, private, public for members in component
+.reduce the if else conditions(use ternary, ??, :?, ?., ..., &&, |, & in
+oneline for data manipulation)
+.Write unit tests for components, services, directive and other Angular
+constructs, Snapshot Test for ngRx Store(Marble Test for Observables)
+.Keep templates clean by avoiding complex logic. Move logic to the
+component class
+.Avoid using the : any type unless absolutely necessary. Provide explicit
+type definitions for variables, parameters, and return types
+.for each unit Module keep the folders:
+container/componet/service/model/mock/constant/directive/
+.use new Map() for structure the complex data, handle switch case in new
+Map() to select the key value
+.use <ng-container *ngTemplateOutlet/> for switch case/nested condition in
+component html
+.Document important aspects of the code(logic)
+.Place each component in its own file
+.not to use ::ng-deep in scss for styling the elements, instead use :host,
+:host-context()
+.$npm audit for checking the js vunerability in packages
+.do $npm run verify  which should verify the eslint and test spec and
+prettify
+.add teams notification in git workflow
+
+.keep the imports order angular package to install
+.remove un-necessary methods if not used like constructor() {} inside
+component
+.variables/returns should have meaning to understand the purpose
+
+
+--- Doubts Communication To Fix
+
+
+Voice Communication
+1. How to Talk with Senior/Reporter
+2. How to Talk with HR, how to ask for a help
+3. How to talk with Secuirity Guard
+4. How to Talk with Junior
+5. How to talk in a Team
+6. How to initiate talk in Team
+7. How to end discussion in Team with various cases
+8. How to intoduce to the Team
+9. How to Thanks to indvidual in farewel
+10. How to Talk with Super Boss
+11. How to talk with super senior
+12. How to request someone(senior, junior) for help - various cases(in
+voice)
+13. How to write PR review comment with respect to
+juinior/senior/contributor
+14. How to give presententation by wishing everyone and closing the task at
+end
+15. Shedule a meeting in Team and initiate the discussion in a nice manner
+with senior/junior
+16. Create your Team/Group and write/address to everyone
+17. Ping in the Group where everybody is there
+18. when want a service from ITR broker, how to approach since they want
+only money
+19. How to introduce urself without knowing others in the Teams meeting for
+a spoken english class
+20. What should be the hobbies to speak in Groups
+21. How to tell/complain/comment on a Topic in a Group
+22. How to ask a Question in Meeting Regaring the personal problems
+23. When Joining meeting greet to everybody for better communication/
+asking anyting/ requesting anything like Hello, Good Evening, ...
+
+
+
+How to work with juniors since they finish the task very quickly
+1. Watch/Review the code, understand the logic from ChatGPT
+2. focus/watch everything on point of optimisation what code they will
+write and predict it before they send PR, like ngRx -- effect module(SST)
+3. enable strict mode in angular/project to get the issue in devops pipeline
+4.
+
+
+-----Task
+combine multiple reducers into a group to import in ngModule promoting
+modularity and scalability
+combine all the custom Modules into a group and import group to main module
+
+
+old nrgx structure
+new nrgx structure
+cheatsheet nrgx old
+cheatsheet nrgx new
+cheatsheet of angular
+cheatsheet of angular 17
+Common Problems and Solutions in Angular
+Common Problems and Solutions in React
+Common Problems and Solutions in Vue
+Common Problems and Solutions in Stencil
+=====================================================
+
+--0000000000005c9b11061c7b889f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">.use of PascalCase, camelCase, kebab-case, SNAKE_CASE nami=
+ng conventions<br>.Keep services focused on a single responsibility.<br>.Su=
+ffix names with &quot;****.service.ts&quot;, &quot;****.page.ts&quot;, &quo=
+t;****.component.ts&quot;, &quot;****.mock.ts&quot;, .....<br>.Use project =
+prefix for component selectors like &lt;wissen-modal-dialog/&gt;<br>.depend=
+ency injection system to inject services where needed<br>.use onPushStrateg=
+y/ use this.cdr if required<br>.Use encapsulation strategies (ViewEncapsula=
+tion) wisely based on component requirements<br>.Unsubscribe from observabl=
+es to avoid memory leaks<br>.Use operators like switchMap and mergeMap to a=
+void nested subscriptions<br>.Write self-explanatory code, proper name for =
+members/methods(verbs), use CONST_DATA, readonly, private, public for membe=
+rs in component<br>.reduce the if else conditions(use ternary, ??, :?, ?., =
+..., &amp;&amp;, |, &amp; in oneline for data manipulation)<br>.Write unit =
+tests for components, services, directive and other Angular constructs, Sna=
+pshot Test for ngRx Store(Marble Test for Observables)<br>.Keep templates c=
+lean by avoiding complex logic. Move logic to the component class<br>.Avoid=
+ using the : any type unless absolutely necessary. Provide explicit type de=
+finitions for variables, parameters, and return types<br>.for each unit Mod=
+ule keep the folders: container/componet/service/model/mock/constant/direct=
+ive/<br>.use new Map() for structure the complex data, handle switch case i=
+n new Map() to select the key value<br>.use &lt;ng-container *ngTemplateOut=
+let/&gt; for switch case/nested condition in component html<br>.Document im=
+portant aspects of the code(logic)<br>.Place each component in its own file=
+<br>.not to use ::ng-deep in scss for styling the elements, instead use :ho=
+st, :host-context()<br>.$npm audit for checking the js vunerability in pack=
+ages<br>.do $npm run verify =C2=A0which should verify the eslint and test s=
+pec and prettify<br>.add teams notification in git workflow<br><br>.keep th=
+e imports order angular package to install<br>.remove un-necessary methods =
+if not used like constructor() {} inside component<br>.variables/returns sh=
+ould have meaning to understand the purpose<br><div><br></div><div><br></di=
+v><div>--- Doubts Communication To Fix</div><div><br></div><div><br></div><=
+div>Voice Communication<br>1. How to Talk with Senior/Reporter<br>2. How to=
+ Talk with HR, how to ask for a help<br>3. How to talk with Secuirity Guard=
+<br>4. How to Talk with Junior<br>5. How to talk in a Team<br>6. How to ini=
+tiate talk in Team<br>7. How to end discussion in Team with various cases<b=
+r>8. How to intoduce to the Team<br>9. How to Thanks to indvidual in farewe=
+l<br>10. How to Talk with Super Boss<br>11. How to talk with super senior<b=
+r>12. How to request someone(senior, junior) for help - various cases(in vo=
+ice)<br>13. How to write PR review comment with respect to juinior/senior/c=
+ontributor<br>14. How to give presententation by wishing everyone and closi=
+ng the task at end<br>15. Shedule a meeting in Team and initiate the discus=
+sion in a nice manner with senior/junior<br>16. Create your Team/Group and =
+write/address to everyone<br>17. Ping in the Group where everybody is there=
+<br>18. when want a service from ITR broker, how to approach since they wan=
+t only money<br>19. How to introduce urself without knowing others in the T=
+eams meeting for a spoken english class<br>20. What should be the hobbies t=
+o speak in Groups<br>21. How to tell/complain/comment on a Topic in a Group=
+<br>22. How to ask a Question in Meeting Regaring the personal problems<br>=
+23. When Joining meeting greet to everybody for better communication/ askin=
+g anyting/ requesting anything like Hello, Good Evening, ...<br><br><br><br=
+>How to work with juniors since they finish the task very quickly<br>1. Wat=
+ch/Review the code, understand the logic from ChatGPT<br>2. focus/watch eve=
+rything on point of optimisation what code they will write and predict it b=
+efore they send PR, like ngRx -- effect module(SST)<br>3. enable strict mod=
+e in angular/project to get the issue in devops pipeline<br>4. <br><br><br>=
+-----Task<br>combine multiple reducers into a group to import in ngModule p=
+romoting modularity and scalability<br>combine all the custom Modules into =
+a group and import group to main module<br><br><br>old nrgx structure<br>ne=
+w nrgx structure<br>cheatsheet nrgx old<br>cheatsheet nrgx new<br>cheatshee=
+t of angular<br>cheatsheet of angular 17<br>Common Problems and Solutions i=
+n Angular<br>Common Problems and Solutions in React<br>Common Problems and =
+Solutions in Vue<br>Common Problems and Solutions in Stencil<br>=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+<br></div></div>
+
+--0000000000005c9b11061c7b889f--

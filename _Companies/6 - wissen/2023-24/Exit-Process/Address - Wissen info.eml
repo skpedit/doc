@@ -1,0 +1,107 @@
+Delivered-To: sraban4897@gmail.com
+Received: by 2002:a05:6520:555:b0:298:c0f6:aeab with SMTP id h21csp4102459lkv;
+        Fri, 5 Jul 2024 00:48:12 -0700 (PDT)
+X-Received: by 2002:a17:902:e5ca:b0:1f9:b121:35f0 with SMTP id d9443c01a7336-1fb33ef5df4mr35453745ad.54.1720165692616;
+        Fri, 05 Jul 2024 00:48:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1720165692; cv=none;
+        d=google.com; s=arc-20160816;
+        b=pk1arBcQi3aqcbkpngRduJxEn9a2fLTG6+7xukmE2SBUtzmFeZrLOIJ4QzqcL38OWP
+         eJlMitNFf8zqolhcIka6GDEdqc3fzelreBPvdhsL0dVzW6OfXupn+O3Ctpy+peg9Y74x
+         4/EwULBvvRcwab+AAWgG0wW6mnSAiNEhuMIkkQG1uhAwJCFpUzO2dEiQrPUdVdGskawk
+         HzWUGNvhjeTUKrV/Zf8AIaE3iAWCH2ONs4XP9yfLOXK6omMUIoZesRoH+rOehw8Uq087
+         Ri84qxDNIu1/gZRl8nI7pZlRKo334cL6CMJqov2SWQabQ2TF1PsdhmkqN5T3oQJUKq3c
+         +bEA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=R00SefqKTeVBIs5NcS2mdbdvb9kWysbsrOE7mWCHHNY=;
+        fh=xFFNMPujod2Imka9Yx8yy/Dlk+FRKVpvokCFzF2iot4=;
+        b=kM0P1fMFTcxdqAENuYEHa0l46z+2K5a7BzD2MGrhinc3Qhjz3e9kvEE8V2rPOJDwGC
+         E2myx8vFkIoOQ9dJscNBxEJ/p50hQSweTLjxrGa8f1KW33+Ex9oM88mbNz/1vWkCt7cY
+         Gkj0pAxict6jOale9VkawczypS0Zl78Ken9BTlnOEvdSvjk88lfVAVoD+G0v/DrslDmf
+         7C54bcPeC1waRCkCydpAKQzomUg5z8Tkim9bnfxNhiXTfUmUgVcowxxeP62XshcGgCZR
+         sVOatt+v4iJ2UdILUH8tm4yvX/02DIjr2PpfrQYVLR2phiGfwn6B/we4w7QzchoMgPnM
+         9qNA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=lPyBuCb3;
+       spf=pass (google.com: domain of sraban.wissen@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=sraban.wissen@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <sraban.wissen@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d9443c01a7336-1fb277b8addsor20795235ad.2.2024.07.05.00.48.12
+        for <sraban4897@gmail.com>
+        (Google Transport Security);
+        Fri, 05 Jul 2024 00:48:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of sraban.wissen@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=lPyBuCb3;
+       spf=pass (google.com: domain of sraban.wissen@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=sraban.wissen@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1720165691; x=1720770491; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=R00SefqKTeVBIs5NcS2mdbdvb9kWysbsrOE7mWCHHNY=;
+        b=lPyBuCb3oag9Rqj2LVMRmQCgaxG3mYStAhraAiYq8yIki4jm65UbRDtHgx3wSBkONl
+         pVfQ7LGmN6TTzZIQ5IoZSv50DTnDMxB2Wg/4l1FjPO5tDfXtA/g1OWyuF+C9quE6KwWP
+         /DGD+XpqxxoABZAj5MEEPGkMWerC0eUpg7/zldmBPoU9RdxKttwdIDkVQ53Cx9k8qikG
+         a64TPrLlrFG54X1T1U2KnKn+yVczSA7UEetck3K3REC/7w+yvNKz/VVBdTYAoJDhB9wz
+         ny0wb2o5Kainuerf5jNqfrYwOs71Ry6KmoRhoQf+3trV0vfK2HoQTap4wdu95sIyBwDS
+         iWVw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1720165691; x=1720770491;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=R00SefqKTeVBIs5NcS2mdbdvb9kWysbsrOE7mWCHHNY=;
+        b=bD6OxMw/XNYxBedHPtXl/Zm78qlXA6b38u7d9n9dmiwWjFzxAYrAdeUP+2PwOpz3XL
+         YJxxJ4+yVJJnsB35W9CuldqczLBHDSZpaAVgftlctPgDt+KE+x+CeXNgOLy5lJLAKXVR
+         TUflAMV3zMIrdFryT/rjVtZdQZrK8OIZ5FiH26OqLfNDJkrKhOBGjT4BgXXLgQoq4RbU
+         Xm+6Vpzcq/pSFbrqMnB3eyFZY1Ad47/a+jPQ7kEMUYmzM4oEVAvgBnsD83NtOix6pdk2
+         ajQWID/8TTdfGPZ5x55BoPFEpCO/YUpq9OJ6uYi+Egkf3T5KRxscwXnKL7wQtJ3XY2mg
+         dWUw==
+X-Gm-Message-State: AOJu0YzWF2lFj8WBeRUNu+BcmmS4pYaadHMTEdyTHgHP3A3/gDQ/g6Di
+	EwWtcsFLhUZl/OhZBLTdXHssteb4SZd5gfSIga2vKt1bxUNoGL94FsLMn2dw7ID1usFtjqEYUSn
+	FVSczappaIjwfi36/Ijid0nYkiUDeuREi
+X-Google-Smtp-Source: AGHT+IEnmSCQOtJCIKNIltY3O1+jiXNGUDv7KgwdvI37LdJPOrXbw8f4/znkxKLGbsj6yGynImwClYTA6DqIb1w9xuQ=
+X-Received: by 2002:a17:903:32cd:b0:1f4:9b2a:b337 with SMTP id
+ d9443c01a7336-1fb33df5b17mr37574275ad.3.1720165691576; Fri, 05 Jul 2024
+ 00:48:11 -0700 (PDT)
+MIME-Version: 1.0
+From: sraban wissen <sraban.wissen@gmail.com>
+Date: Fri, 5 Jul 2024 13:18:02 +0530
+Message-ID: <CAKhNXu9h3s9mq8pFNBy0VA=buYVUgA-RJGr5M+fUpWeFi4Y6LQ@mail.gmail.com>
+Subject: Address - Wissen info
+To: sraban4897@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000000059e6061c7b4996"
+
+--0000000000000059e6061c7b4996
+Content-Type: text/plain; charset="UTF-8"
+
+me - sraban.pahadasingh@wisseninfotech.com
+id - 6728
+
+"HR, Wissen" <hr@wisseninfotech.com>
+"IT Support" <itsupport@wisseninfotech.com>
+"Pavan Galeveti" <pavan.galeveti@wisseninfotech.com>
+"Harshitha Kummathi" <harshitha.kummathi@wisseninfotech.com>
+karthika.solairajan@wisseninfotech.com
+
+--0000000000000059e6061c7b4996
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>me - <a href=3D"mailto:sraban.pahadasingh@wisseninfot=
+ech.com">sraban.pahadasingh@wisseninfotech.com</a></div><div>id - 6728</div=
+><div><br></div>&quot;HR, Wissen&quot; &lt;<a href=3D"mailto:hr@wisseninfot=
+ech.com">hr@wisseninfotech.com</a>&gt;<br><div>&quot;IT Support&quot; &lt;<=
+a href=3D"mailto:itsupport@wisseninfotech.com">itsupport@wisseninfotech.com=
+</a>&gt;<br></div><div>&quot;Pavan Galeveti&quot; &lt;<a href=3D"mailto:pav=
+an.galeveti@wisseninfotech.com">pavan.galeveti@wisseninfotech.com</a>&gt;<b=
+r></div><div>&quot;Harshitha Kummathi&quot; &lt;<a href=3D"mailto:harshitha=
+.kummathi@wisseninfotech.com">harshitha.kummathi@wisseninfotech.com</a>&gt;=
+<br></div><div><a href=3D"mailto:karthika.solairajan@wisseninfotech.com">ka=
+rthika.solairajan@wisseninfotech.com</a><br></div><div><br></div></div>
+
+--0000000000000059e6061c7b4996--
